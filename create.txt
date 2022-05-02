@@ -1,0 +1,43 @@
+create database advertise;
+
+use  advertise;
+
+CREATE TABLE Customer(
+  id_customer smallint NOT NULL PRIMARY KEY ,
+  firm nvarchar(50)  NOT NULL,
+  contact_person nvarchar(50)  NULL,
+  telephone nvarchar(15)  NOT NULL,
+  code int NOT NULL
+);
+
+CREATE TABLE Trailer(
+  id_trailer smallint NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+  name nvarchar(50)  NOT NULL,
+  duration time NOT NULL
+);
+
+CREATE TABLE Telecast(
+  id_telecast smallint NOT NULL PRIMARY KEY ,
+  name nvarchar(50)  NULL,
+  rate tinyint NULL,
+  cost_minute float NULL
+);
+
+
+CREATE TABLE Orders(
+  ref_customer smallint NOT NULL,
+  ref_telecast smallint NOT NULL,
+  ref_trailer smallint NOT NULL,
+  release_date datetime NOT NULL
+);
+
+
+
+ALTER TABLE Orders  ADD CONSTRAINT FK_Order_Customer FOREIGN KEY(ref_customer)
+REFERENCES Customer (id_customer);
+
+ALTER TABLE Orders  ADD  CONSTRAINT FK_Order_Telecast FOREIGN KEY(ref_telecast)
+REFERENCES Telecast (id_telecast);
+
+ALTER TABLE Orders ADD  CONSTRAINT FK_Order_Trailer FOREIGN KEY(ref_trailer)
+REFERENCES Trailer (id_trailer)

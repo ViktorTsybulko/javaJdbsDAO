@@ -1,0 +1,92 @@
+INSERT INTO Customer
+           (id_customer
+           ,firm
+           ,contact_person
+           ,telephone
+           ,code)
+     VALUES (101, 'P&G', 'Иванов', '0934545320', 5454553);
+
+INSERT INTO Customer
+           (id_customer
+           ,firm
+           ,contact_person
+           ,telephone
+           ,code)
+     VALUES (656, 'Cosmetics', 'Жуков', '7441210', 78992245);
+
+
+INSERT INTO Telecast
+           (id_telecast
+           ,name
+           ,rate
+           ,cost_minute)
+     VALUES  (501,'Х-фактор',10,300.0000);
+
+INSERT INTO Telecast
+           (id_telecast
+           ,name
+           ,rate
+           ,cost_minute)
+     VALUES (502, 'Битва экстрасенсов', 8, 240);
+
+INSERT INTO Telecast
+           (id_telecast
+           ,name
+           ,rate
+           ,cost_minute)
+     VALUES (503, 'Провокатор', 3, 100);
+
+INSERT INTO Telecast
+           (id_telecast
+           ,name
+           ,rate
+           ,cost_minute)
+     VALUES (504, 'Вечерний квартал', 9, 280);
+
+INSERT INTO Trailer
+           (name
+           ,duration)
+     VALUES ('Colgate', '0:2:0');
+
+INSERT INTO Trailer
+           (name
+           ,duration)
+     VALUES ('Jacobs', '0:1:30');
+
+INSERT INTO Trailer
+           (name
+           ,duration)
+     VALUES ('Loreal', '0:0:30');
+
+INSERT INTO Trailer
+           (name
+           ,duration)
+     VALUES ('Tide', '0:2:0');
+
+INSERT INTO Orders
+           (ref_customer
+           ,ref_telecast
+           ,ref_trailer
+           ,release_date)
+     VALUES (101, 501, 1, '2001-05-05 21:00:00');
+
+INSERT INTO Orders
+           (ref_customer
+           ,ref_telecast
+           ,ref_trailer
+           ,release_date)
+     VALUES (101, 502, 1, '2011-11-05 19:30:00');
+
+INSERT INTO Orders
+           (ref_customer
+           ,ref_telecast
+           ,ref_trailer
+           ,release_date)
+     VALUES (101, 504, 4, '2011-10-06 20:41:00');
+
+INSERT INTO Orders
+           (ref_customer
+           ,ref_telecast
+           ,ref_trailer
+           ,release_date)
+     VALUES (656, 504, 3, '2011-11-05 20:45:00');
